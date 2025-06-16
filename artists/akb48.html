@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKB48 - J-POP World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .language-selector {
+            position: relative;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            z-index: 50;
+        }
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-900 via-purple-800 to-blue-900 min-h-screen text-white">
+    <!-- 네비게이션 바 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glassmorphism">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="../index.html" class="text-xl font-bold">J-POP</a>
+                    <a href="../k-pop.html" class="nav-link">K-POP</a>
+                    <a href="../us-pop.html" class="nav-link">US-POP</a>
+                    <a href="../uk-pop.html" class="nav-link">UK-POP</a>
+                    <a href="../latin-pop.html" class="nav-link">Latin-POP</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="language-selector">
+                        <button class="flex items-center space-x-2">
+                            <span>日本語</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" onclick="changeLanguage('ja')" class="block px-4 py-2 hover:bg-white/10">日本語</a>
+                            <a href="#" onclick="changeLanguage('en')" class="block px-4 py-2 hover:bg-white/10">English</a>
+                            <a href="#" onclick="changeLanguage('ko')" class="block px-4 py-2 hover:bg-white/10">한국어</a>
+                            <a href="#" onclick="changeLanguage('es')" class="block px-4 py-2 hover:bg-white/10">Español</a>
+                            <a href="#" onclick="changeLanguage('zh')" class="block px-4 py-2 hover:bg-white/10">中文</a>
+                        </div>
+                    </div>
+                    <button class="md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-6 fade-in">AKB48</h1>
+            <p class="text-xl mb-8 fade-in" style="animation-delay: 0.2s">日本最大のアイドルグループ</p>
+            <div class="relative w-full max-w-4xl mx-auto h-96 mb-12 fade-in" style="animation-delay: 0.4s">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="AKB48" class="w-full h-full object-cover rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="container mx-auto px-4 pb-20">
+        <!-- 멤버 소개 -->
+        <section class="mb-20 fade-in" style="animation-delay: 0.6s">
+            <h2 class="text-3xl font-bold mb-8 text-center">メンバー紹介</h2>
+            <div class="glassmorphism p-8 rounded-lg">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">向井地美音 (Mukaichi Mion)</h3>
+                        <p class="text-gray-200">総監督</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">岡部麟 (Okabe Rin)</h3>
+                        <p class="text-gray-200">チームAキャプテン</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">小栗有以 (Oguri Yui)</h3>
+                        <p class="text-gray-200">チームKキャプテン</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">柏木由紀 (Kashiwagi Yuki)</h3>
+                        <p class="text-gray-200">チームBキャプテン</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 주요 활동 -->
+        <section class="mb-20 fade-in" style="animation-delay: 0.8s">
+            <h2 class="text-3xl font-bold mb-8 text-center">主な活動</h2>
+            <div class="glassmorphism p-8 rounded-lg">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">デビュー</h3>
+                        <p>2005年12月8日、シングル「桜の花びらたち」でデビュー</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">主な受賞歴</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>日本レコード大賞 最優秀作品賞（2011年）</li>
+                            <li>MTV Video Music Awards Japan 最優秀ビデオ賞（2012年）</li>
+                            <li>日本ゴールドディスク大賞 アーティスト・オブ・ザ・イヤー（2013年）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">主なコンサートツアー</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>AKB48 15th Anniversary Tour（2020年）</li>
+                            <li>AKB48 16th Anniversary Tour（2021年）</li>
+                            <li>AKB48 17th Anniversary Tour（2022年）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 인기곡 -->
+        <section class="fade-in" style="animation-delay: 1s">
+            <h2 class="text-3xl font-bold mb-8 text-center">人気曲</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">ヘビーローテーション</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/8j9zMok6two" 
+                                title="AKB48 - ヘビーローテーション" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">恋するフォーチュンクッキー</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/8j9zMok6two" 
+                                title="AKB48 - 恋するフォーチュンクッキー" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">真夏のSounds good!</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/8j9zMok6two" 
+                                title="AKB48 - 真夏のSounds good!" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">UZA</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/8j9zMok6two" 
+                                title="AKB48 - UZA" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="glassmorphism py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 J-POP World. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 언어 변경 기능
+        const translations = {
+            ja: {
+                title: "AKB48",
+                subtitle: "日本最大のアイドルグループ",
+                members: "メンバー紹介",
+                activities: "主な活動",
+                popularSongs: "人気曲",
+                debut: "デビュー",
+                awards: "主な受賞歴",
+                tours: "主なコンサートツアー"
+            },
+            en: {
+                title: "AKB48",
+                subtitle: "Japan's Largest Idol Group",
+                members: "Members",
+                activities: "Major Activities",
+                popularSongs: "Popular Songs",
+                debut: "Debut",
+                awards: "Major Awards",
+                tours: "Major Concert Tours"
+            },
+            ko: {
+                title: "AKB48",
+                subtitle: "일본 최대의 아이돌 그룹",
+                members: "멤버 소개",
+                activities: "주요 활동",
+                popularSongs: "인기곡",
+                debut: "데뷔",
+                awards: "주요 수상 경력",
+                tours: "주요 콘서트 투어"
+            },
+            es: {
+                title: "AKB48",
+                subtitle: "El grupo de ídolos más grande de Japón",
+                members: "Miembros",
+                activities: "Actividades principales",
+                popularSongs: "Canciones populares",
+                debut: "Debut",
+                awards: "Premios principales",
+                tours: "Giras principales"
+            },
+            zh: {
+                title: "AKB48",
+                subtitle: "日本最大的偶像组合",
+                members: "成员介绍",
+                activities: "主要活动",
+                popularSongs: "热门歌曲",
+                debut: "出道",
+                awards: "主要获奖",
+                tours: "主要巡演"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // 페이지 로드 시 저장된 언어 설정 적용
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'ja';
+            changeLanguage(savedLanguage);
+        });
+
+        // 모바일 메뉴 토글
+        document.querySelector('button.md\\:hidden').addEventListener('click', () => {
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html> 

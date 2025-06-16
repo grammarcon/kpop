@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billie Eilish - US-POP World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .language-selector {
+            position: relative;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            z-index: 50;
+        }
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-900 via-teal-800 to-blue-900 min-h-screen text-white">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glassmorphism">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="../index.html" class="text-xl font-bold">US-POP</a>
+                    <a href="../k-pop.html" class="nav-link">K-POP</a>
+                    <a href="../j-pop.html" class="nav-link">J-POP</a>
+                    <a href="../uk-pop.html" class="nav-link">UK-POP</a>
+                    <a href="../latin-pop.html" class="nav-link">Latin-POP</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="language-selector">
+                        <button class="flex items-center space-x-2">
+                            <span>English</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" onclick="changeLanguage('en')" class="block px-4 py-2 hover:bg-white/10">English</a>
+                            <a href="#" onclick="changeLanguage('ko')" class="block px-4 py-2 hover:bg-white/10">한국어</a>
+                            <a href="#" onclick="changeLanguage('ja')" class="block px-4 py-2 hover:bg-white/10">日本語</a>
+                            <a href="#" onclick="changeLanguage('es')" class="block px-4 py-2 hover:bg-white/10">Español</a>
+                            <a href="#" onclick="changeLanguage('zh')" class="block px-4 py-2 hover:bg-white/10">中文</a>
+                        </div>
+                    </div>
+                    <button class="md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-6 fade-in">Billie Eilish</h1>
+            <p class="text-xl mb-8 fade-in" style="animation-delay: 0.2s">Alternative Pop Sensation</p>
+            <div class="relative w-full max-w-4xl mx-auto h-96 mb-12 fade-in" style="animation-delay: 0.4s">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="Billie Eilish" class="w-full h-full object-cover rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pb-20">
+        <!-- Artist Introduction -->
+        <section class="mb-20 fade-in" style="animation-delay: 0.6s">
+            <h2 class="text-3xl font-bold mb-8 text-center">Artist Profile</h2>
+            <div class="glassmorphism p-8 rounded-lg">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">About Billie Eilish</h3>
+                        <p class="text-gray-200">Billie Eilish Pirate Baird O'Connell is an American singer-songwriter who has become one of the most influential artists of her generation. Known for her distinctive voice and unique style, she has won multiple Grammy Awards and has broken numerous records in the music industry.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Musical Style</h3>
+                        <p class="text-gray-200">Her music spans multiple genres including pop, alternative, and electronic. She is known for her whispery vocals, dark themes, and innovative production style, often collaborating with her brother Finneas O'Connell.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Activities -->
+        <section class="mb-20 fade-in" style="animation-delay: 0.8s">
+            <h2 class="text-3xl font-bold mb-8 text-center">Major Activities</h2>
+            <div class="glassmorphism p-8 rounded-lg">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Debut</h3>
+                        <p>2016, Debut single "Ocean Eyes"</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Major Awards</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>7 Grammy Awards</li>
+                            <li>2 American Music Awards</li>
+                            <li>3 MTV Video Music Awards</li>
+                            <li>2 Brit Awards</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Major Tours</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>When We All Fall Asleep Tour (2019)</li>
+                            <li>Where Do We Go? World Tour (2020)</li>
+                            <li>Happier Than Ever World Tour (2022)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Songs -->
+        <section class="fade-in" style="animation-delay: 1s">
+            <h2 class="text-3xl font-bold mb-8 text-center">Popular Songs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">bad guy</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/DyDfgMOUjCI" 
+                                title="Billie Eilish - bad guy" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">when the party's over</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/pbMwTqkKSps" 
+                                title="Billie Eilish - when the party's over" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Happier Than Ever</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/5GJWxDKyk3A" 
+                                title="Billie Eilish - Happier Than Ever" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">What Was I Made For?</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/0e3Gpz4r1UY" 
+                                title="Billie Eilish - What Was I Made For?" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                class="w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glassmorphism py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 US-POP World. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language change functionality
+        const translations = {
+            en: {
+                title: "Billie Eilish",
+                subtitle: "Alternative Pop Sensation",
+                profile: "Artist Profile",
+                activities: "Major Activities",
+                popularSongs: "Popular Songs",
+                debut: "Debut",
+                awards: "Major Awards",
+                tours: "Major Tours"
+            },
+            ko: {
+                title: "빌리 아일리시",
+                subtitle: "얼터너티브 팝 센세이션",
+                profile: "아티스트 프로필",
+                activities: "주요 활동",
+                popularSongs: "인기곡",
+                debut: "데뷔",
+                awards: "주요 수상 경력",
+                tours: "주요 투어"
+            },
+            ja: {
+                title: "ビリー・アイリッシュ",
+                subtitle: "オルタナティブポップの新星",
+                profile: "アーティストプロフィール",
+                activities: "主な活動",
+                popularSongs: "人気曲",
+                debut: "デビュー",
+                awards: "主な受賞歴",
+                tours: "主なツアー"
+            },
+            es: {
+                title: "Billie Eilish",
+                subtitle: "Sensación del Pop Alternativo",
+                profile: "Perfil del Artista",
+                activities: "Actividades Principales",
+                popularSongs: "Canciones Populares",
+                debut: "Debut",
+                awards: "Premios Principales",
+                tours: "Giras Principales"
+            },
+            zh: {
+                title: "比莉·艾利什",
+                subtitle: "另类流行音乐新星",
+                profile: "艺术家简介",
+                activities: "主要活动",
+                popularSongs: "热门歌曲",
+                debut: "出道",
+                awards: "主要获奖",
+                tours: "主要巡演"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Apply saved language preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLanguage);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', () => {
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html> 
